@@ -52,6 +52,14 @@ class CodeAnalyzer:
 
 analyzer = CodeAnalyzer()
 
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({
+        "message": "Plagiarism Detector API is running!",
+        "health": "/api/health"
+    }), 200
+
+
 @app.route('/api/health', methods=['GET'])
 def health():
     return jsonify({
